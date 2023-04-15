@@ -1,28 +1,20 @@
 """
-Задача 10: На столе лежат n монеток. Некоторые из них лежат вверх решкой, а некоторые – гербом. Определите минимальное число монеток, которые нужно перевернуть, чтобы все монетки были повернуты вверх одной и той же стороной. Выведите минимальное количество монет, которые нужно перевернуть
+    Задача 1. 
+
+    Напишите программу, которая принимает на вход число N и выдает список факториалов для чисел от 1 до N.
+    пусть N = 4 -> [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 """
-import random
-
-from random import randint
-
-amount_coin = int(input('введите количество монет: '))
-
-m = 0
-k = 0
-coins = [0, 1]
-for i in range(amount_coin):
-    random.shuffle(coins)
-    print(f'все монеты{coins}')
-    if int(coins[0]) == 0:
-        k += 1
-    if int(coins[0]) == 1:
-        m += 1
-print(f'всего монет {m, k}')
-
-if m > k:
-    ans = k
-else:
-    ans = m
-
-print(f"минимальное количество монет, которые нужно перевернуть {ans}")
+def task_1(): 
+    number = int(input('Введите число: '))
+    print(f'{number}! -> ', end='[ ')
+    factorial = 0
+    if number == 0:
+        print('0! = 0')
+    else:
+        factorial = 1
+        for i in range(1, number + 1):
+            factorial *= i
+            print(factorial, end=', ' )
+    print(end=']')
+task_1()
 

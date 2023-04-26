@@ -6,12 +6,9 @@
 """
 import random
 def task_1():
-
     length = int(input('Введите число: '))
     numbers = [random.randint(1, 11) for _ in range(length)]
     x = filter(lambda x: x > 5, numbers)
     x = list(x)
     print(length,'->', *x, end='')
-
 task_1()
-    

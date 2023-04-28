@@ -4,47 +4,29 @@
     Создайте скрипт бота, который находит ответы на фразы по ключу в словаре. Бот должен, как минимум, отвечать на фразы «привет», «как тебя зовут». Если фраза ему неизвестна, он выводит соответствующую фразу.
 """
 
+def bot():
 
-bot = ('%ваш токен%');
-@bot.message_handler(content_types=['text'])
-def get_text_messages(message):
-    if message.text == "Привет":
-        bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
-    elif message.text == "/help":
-        bot.send_message(message.from_user.id, "Напиши привет")
-    else:
-        bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
-bot.polling(none_stop=True, interval=0)
-name = '';
-surname = '';
-age = 0;
-@bot.message_handler(content_types=['text'])
-def start(message):
-    if message.text == '/reg':
-        bot.send_message(message.from_user.id, "Как тебя зовут?");
-        bot.register_next_step_handler(message, get_name); #следующий шаг – функция get_name
-    else:
-        bot.send_message(message.from_user.id, 'Напиши /reg');
+    slovo = input(f'Привет! ')
+    name = input('Как тебя зовут? ')
+    names = ['Толя','Катя','Витя','Максим','Женя']
+    slova = ['здорово','привет','Привет','привет!']
+    years = ['18']
 
-def get_name(message): #получаем фамилию
-    global name;
-    name = message.text;
-    bot.send_message(message.from_user.id, 'Какая у тебя фамилия?');
-    bot.register_next_step_handler(message, get_surnme);
+    for nam in names:
+        if nam == name:
+            print(f'Приятно познакомиться {nam} !')
+    
+    for slov in slova:
+        if slov == slovo:
+            print(f'Отлично, тогда начну опрос.')
+    
+    age = input(f'Сколько тебе лет {name} ? ')
+    for year in years:
+        if year == age:
+            print(f'Отлично, тебе есть {year} лет {name} ! Твой возраст соотвествует.')
+            break
+        else: 
+            year == age
+            print(f'{name} возраст не подходит.')
 
-def get_surname(message):
-    global surname;
-    surname = message.text;
-    bot.send_message('Сколько тебе лет?');
-    bot.register_next_step_handler(message, get_age);
-
-def get_age(message):
-    global age;
-    while age == 0: #проверяем что возраст изменился
-        try:
-             age = int(message.text) #проверяем, что возраст введен корректно
-        except Exception:
-             bot.send_message(message.from_user.id, 'Цифрами, пожалуйста');
-        bot.send_message(message.from_user.id, 'Тебе '+str(age)+' лет, тебя зовут '+name+' '+surname+'?')
-
-   
+bot()

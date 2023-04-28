@@ -5,8 +5,14 @@
     а –> абрикос, авокадо, апельсин, айва.
 """
 
-def task_2(char, fruits):
+def task_2():
+
+    char = input('Введите букву: ')
+    fruits = ['абрикос', 'авокадо', 'апельсин', 'айва','мандарин', 'манго','маракуйя']
+    print(char, end=' -> ')
     for fruit in fruits:
         if fruit[0] == char:
             print(fruit, end=', ')
     print('\b\b.')
+    
+task_2()

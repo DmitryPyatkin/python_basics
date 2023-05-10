@@ -10,8 +10,3 @@ def task_2():
             for z in range(0, 2):
                 print(f'{x} | {y} | {z} | {int(not (x or y) and z)}')
 task_2()
-
-
-
-
-

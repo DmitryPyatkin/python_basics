@@ -29,4 +29,3 @@ def task_1():
     for n in range(1, number + 1):
         print(f'{n}! = {fact(n)}')
 task_1()
-

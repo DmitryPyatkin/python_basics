@@ -18,15 +18,15 @@
 #     print(end=']')
 # task_1()
 
-# def fact(number):
-#     res = 1
-#     for n in range(1, number):
-#         res *= n
-#     return res
+def fact(number):
+    res = 1
+    for n in range(1, number):
+        res *= n
+    return res
 
-# def task_1():
-#     number = int(input('Введите число: '))
-#     for n in range(1, number + 1):
-#         print(f'{n}! = {fact(n)}')
-# task_1()
+def task_1():
+    number = int(input('Введите число: '))
+    for n in range(1, number + 1):
+        print(f'{n}! = {fact(n)}')
+task_1()
 

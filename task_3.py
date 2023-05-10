@@ -6,14 +6,18 @@
 """
 
 def task_3():
-    word = 'one'
+    word = 'oneo'
     phrase = 'onetwonine'
-
+    used = []
     for el in word:
         count = 0
-        for letter in phrase: 
-            if letter == el:
-                count += 1
-        print(f'{el} - {count}')
+        if not el in used:
+            for letter in phrase: 
+                if letter == el:
+                    count += 1
+                used.append(el)
+            print(f'{el} - {count}')
+        else:
+            print(f'{el} - уже втречался')
 task_3()
 

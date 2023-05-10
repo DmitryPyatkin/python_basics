@@ -1,18 +1,22 @@
 """
     Задача 4. 
-    Пользователь вводит строку из нескольких слов,
-    разделённых пробелами. Вывести каждое слово с новой строки.
-    Строки необходимо пронумеровать. Если слово длинное,
-    выводить только первые 10 букв в слове.
+    
+    Задайте список из N элементов, заполненных числами из промежутка [-N, N]. Сдвиньте все элементы списка на 2 позиции вправо.
+    3 -> [2, 3, -3, -2, -1, 0, 1]
 """
-my_str = input("Введите строку ")
-my_word = []
-num = 1
-for el in range(my_str.count(' ') + 1):
-    my_word = my_str.split()
-    if len(str(my_word)) <= 10:
-        print(f" {num} {my_word [el]}")
-        num += 1
-    else:
-        print(f" {num} {my_word [el] [0:10]}")
-        num += 1
+
+def task_4():
+    length = int(input('Введите число: '))
+    length = abs(length)
+    # Функция abs в Python возвращает абсолютное значение числа. Таким образом результат всегда положительный.
+    numbers = []
+    for num in range(-length, length + 1):
+        numbers.append(num)
+    print(numbers)
+
+    step = int(input('Введите сдвиг: '))
+ 
+    res = numbers[-step:] + numbers[: -step]
+    print(res)
+
+task_4()

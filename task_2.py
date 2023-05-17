@@ -6,23 +6,46 @@
     [4, 4, 3, 6, 7, 0, 8, 5, 1, 2] - 812 -> нет
 """
 import random
-def task_2():
-    massiv = [random.randint(0, 9) for _ in range(15)]
-    print(massiv)
-    number = input('Введите число: ')
+# def task_2():
+#     massiv = [random.randint(0, 9) for _ in range(15)]
+#     print(massiv)
+#     number = input('Введите число: ')
 
-    res = []
-    for el in number:
-        res.append(int(el))
+#     res = []
+#     for el in number:
+#         res.append(int(el))
     
-    result = False
-    for i in range(len(massiv) - len(res)):
-        if res == massiv[i:len(res) + i]:
-            result = True
+#     result = False
+#     for i in range(len(massiv) - len(res)):
+#         if res == massiv[i:len(res) + i]:
+#             result = True
     
-    if result == True:
-        print(f'{massiv} - {res} -> да')
-    else:
-        print(f'{massiv} - {res} -> нет')
-        
-task_2()
+#     if result == True:
+#         print(f'{massiv} - {res} -> да')
+#     else:
+#         print(f'{massiv} - {res} -> нет')
+# task_2()
+
+numbers = [random.randint(0, 9) for _ in range(15)]
+print(numbers)
+n = int(input('Введите число: '))
+result = ''
+for el in numbers:
+    result += str(el)
+print(result)
+
+if str(n) in result:
+    print('Совпадение есть')
+else:
+    print('Нет совпадений')
+
+numbers = [random.randint(0, 9) for _ in range(15)]
+print(numbers)
+n = int(input('Введите число: '))
+result = ''.join(str(el) for el in numbers)
+print(result)
+# Метод join() в Python возвращает строку, конкатенируя все элементы итерации, разделенные заданным разделителем.
+if str(n) in result:
+    print('Совпадение есть')
+else:
+    print('Нет совпадений')
